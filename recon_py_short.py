@@ -1,4 +1,3 @@
-cat > recon_py_short.py <<'PY'
 #!/usr/bin/env python3
 # recon_py_short.py — tiny starter: ping -> nmap quick -> fetch homepages
 import os, sys, subprocess, datetime, requests
@@ -35,4 +34,3 @@ for proto in ("http://", "https://"):
         print(f"[!] {url} failed: {e}")
 
 print("[*] done. outputs saved to", outdir)
-PY
